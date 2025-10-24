@@ -1,0 +1,40 @@
+.content-table{
+    width:240px;
+    height:fit-content;
+    min-width:200px;
+    position: sticky; /* 保持原有的 sticky 效果 */
+    top:var(--space-lg);
+    z-index:5; /* 避免被相邻元素覆盖 */
+    max-height: calc(100vh - (var(--space-lg) * 2));
+    overflow:auto;
+    background:var(--surface);
+    border-radius:var(--radius);
+    box-shadow:var(--card-shadow);
+    padding:var(--space-md);
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-sm);
+    margin-top:var(--space-sm);
+}
+.content-table ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.content-table li{border-radius:6px;color:var(--muted);transition:all 0.2s ease}
+.content-table li > a{color:inherit;text-decoration:none;display:block;padding:6px 8px;border-radius:6px}
+.content-table li > a:hover{background:rgba(15,23,42,0.03);color:var(--text)}
+.content-table li.active > a{background:var(--primary);color:white;font-weight:500}
+.content-table li.active > a:hover{background:var(--primary);color:white}
+
+/* 嵌套的 ul 增加顶部间距 */
+.content-table li > ul{margin-top:6px;padding-left:12px;gap:4px}
+
+/* 多级标题样式 */
+.content-table .level-1 > a{font-weight:600}
+.content-table .level-2 > a{font-size:0.95em}
+.content-table .level-3 > a{font-size:0.9em}
+.content-table .level-4 > a{font-size:0.85em}
+.content-table .level-5 > a{font-size:0.85em}
+.content-table .level-6 > a{font-size:0.85em}
+
+@media(max-width:640px){
+	.content-table{display:none}
+}
+

@@ -1,0 +1,36 @@
+.app-container{
+    display:flex;
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    min-height:100vh;
+    align-items:stretch;
+    gap:var(--space-sm);
+    padding:var(--space-lg);
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    min-height: 100dvh;              /* 视口高度 */
+    position: relative;           /* 为 sticky 建立定位上下文 */
+    padding-right: 8px;           /* 给滚动条留空间 */
+}
+
+.main-content{
+    flex:1 1 auto;
+    max-width:1000px;
+    height:min-content;
+    min-height: 95vh;
+    background:var(--surface);
+    border-radius:var(--radius);
+    box-shadow:var(--card-shadow);
+    padding:calc(var(--space-lg));
+    margin-top:var(--space-sm);
+}
+
+@media (max-width:800px){
+    .app-container{flex-direction:column;padding:var(--space-md)}
+    .main-content{max-width:100%;margin-left:0}
+}
