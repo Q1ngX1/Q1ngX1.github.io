@@ -27,7 +27,7 @@
 
 例如：$\overrightarrow{a} = (8,12) = 8\hat{i} + 12\hat{j}$
 
-单位向量的求法：$\hat{v} = \frac{\overrightarrow{v}}{\left \| \overrightarrow{v} \right \|}$
+单位向量的求法：{% raw %}$\hat{v} = \frac{\overrightarrow{v}}{\left \| \overrightarrow{v} \right \|}${% endraw %}
 
 
 ## 1.3 向量的基本运算
@@ -423,7 +423,9 @@ $$p_{Ay}=p_{Bx}\sin({\alpha})+p_{By}\cos({\alpha})$$
 考虑二维平面中的一个向量$\hat{v}$和一条线$L$，现在要计算$\hat{v}$在$L$上的投影的向量$\hat{v'}$，如图所示：![[../../../../../../attachments/IMG_1CF97DC19E0E-1.jpeg]]
 
 这时，我们可以引入沿着直线$L$的一个向量$\hat{w}$，同时，由于$\hat{v'}$与$\hat{w}$共线，那么$\hat{v'}$与$\hat{w}$之间就是数乘的关系。首先计算$\hat{v}$与$\hat{w}$的点乘：$$\hat{v} \cdot \hat{w}$$并且，由于$\hat{v'}$与$\hat{w}$的缩放关系，我们就可以得出$\hat{v'}$的表达式：
+{% raw %}
 $$\text{proj}_L(\hat{v})=\hat{v'}=\frac{\hat{v} \cdot \hat{w}}{\hat{w} \cdot \hat{w}}\hat{w}=\frac{\hat{v} \cdot \hat{w}}{{\left \|\hat{w}\right \|}^2}\hat{w}$$
+{% endraw %}
 如果我们进一步将$\hat{w}$设为单位向量，即长度为1，记作$\hat{u}$，因为单位向量的模长为1，故可以写成：$$\hat{v'}=(\hat{v} \cdot \hat{u})\hat{u}$$
 于是就得到了投影矩阵$\text{proj}_L(\hat{v})=(\hat{v} \cdot \hat{u})\hat{u}$。其中$\hat{u}$是$L$上的单位向量。
 ### 2.8.5 对称矩阵
@@ -656,6 +658,7 @@ $$\begin{bmatrix}
 \end{bmatrix} $$
 这一步得到的是行阶梯形矩阵，即下三角矩阵都是0的矩阵
 
+{% raw %}
 $$\begin{bmatrix}
 	1&2&1&2\\
 	0&3&3&3\\
@@ -665,6 +668,7 @@ $$\begin{bmatrix}
 	0&3&3&3\\
 	0&0&1&1\\
 \end{bmatrix}$$
+{% endraw %}
 
 $$\begin{bmatrix}
 	1&2&1&2\\
