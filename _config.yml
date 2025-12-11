@@ -1,14 +1,8 @@
 theme: jekyll-theme-minimal
 title: Q1ngX1's homepage
 description: Study notes
-kramdown:
-  parse_block_html: true
-  math_engine: mathjax
-  syntax_highlighter_opts:
-    block:
-      disable: true
 
-# 排除不需要 Jekyll 处理的文件和目录
+# 完全禁用 Jekyll 处理
 exclude:
   - assets/
   - dist/
@@ -16,6 +10,7 @@ exclude:
   - scripts/
   - "*.md"
 
-# 禁用 Jekyll 的 Liquid 处理来避免与 LaTeX 公式冲突
+# 关闭 Jekyll 的 Liquid 和其他处理
 future: true
-safe: true
+safe: false
+strict_front_matter: false
