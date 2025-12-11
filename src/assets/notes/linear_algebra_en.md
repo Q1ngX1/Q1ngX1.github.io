@@ -1,3 +1,7 @@
+---
+layout: null
+---
+
 # 1 Vectors and vector spaces
 
 ## 1.1 Definition of vector

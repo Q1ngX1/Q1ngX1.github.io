@@ -7,3 +7,11 @@ kramdown:
   syntax_highlighter_opts:
     block:
       disable: true
+
+# 排除不需要 Jekyll 处理的文件和目录
+exclude:
+  - assets/notes/
+  - assets/attachements/
+  - dist/
+  - node_modules/
+  - scripts/
