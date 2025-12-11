@@ -3,8 +3,6 @@ import { useParams, Navigate, Link } from "react-router-dom";
 
 // 动态导入所有笔记文件
 const noteFiles = import.meta.glob('../lib/*.html', { query: '?raw', eager: true });
-// 动态导入 Markdown 源文件（用于下载）
-const mdFiles = import.meta.glob('../assets/notes/*.md', { query: '?url', eager: true });
 
 export default function NotePage(){
     const { filename } = useParams();
@@ -14,14 +12,6 @@ export default function NotePage(){
         const path = `../lib/${filename}`;
         const module = noteFiles[path];
         return module?.default || null;
-    }, [filename]);
-
-    // 获取对应的 Markdown 源文件 URL
-    const mdFileUrl = useMemo(() => {
-        // 将 .html 替换为 .md
-        const mdFilename = filename?.replace('.html', '.md');
-        const mdPath = `../assets/notes/${mdFilename}`;
-        return mdFiles[mdPath]?.default || null;
     }, [filename]);
 
     // 如果文件不存在,重定向到 404
@@ -53,7 +43,7 @@ export default function NotePage(){
         <>
             <div style={{ 
                 display: 'flex', 
-                justifyContent: 'space-between',
+                justifyContent: 'flex-start',
                 marginBottom: 'var(--space-md)',
                 alignItems: 'center'
             }}>
@@ -68,21 +58,6 @@ export default function NotePage(){
                 >
                     ← Back to Home
                 </Link>
-                
-                {mdFileUrl && (
-                    <a 
-                        href={mdFileUrl}
-                        download={filename?.replace('.html', '.md')}
-                        className="link-primary"
-                        style={{ 
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '6px'
-                        }}
-                    >
-                        ↓ Download Markdown
-                    </a>
-                )}
             </div>
             <section className="md-doc">
                 {processed.css && (
